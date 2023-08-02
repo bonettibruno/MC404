@@ -1,0 +1,181 @@
+.data
+cores: .word 0x00FF0000, 0x00FFFFFF, 0x00FF0000, 0x00FFFFFF, 0x00ff6786, 0x000603ff
+
+.text
+main:
+la s0, cores
+li t0, 6
+li t1, 500
+
+loop:
+li a0, 0x101
+lw a1, 0(s0)
+ecall
+
+li t1, 500
+addi s0, s0, 4
+addi t0, t0, -1
+bne t0, zero, loop
+
+li a0, 0x100
+li a1, 0x00070002
+li a2, 0x00ff9901
+ecall
+li a0, 0x100
+li a1, 0x00080002
+li a2, 0x00ff9901
+ecall
+
+li a0, 0x100
+li a1, 0x00060001
+li a2, 0x00ffffff
+ecall
+li a0, 0x100
+li a1, 0x00050001
+li a2, 0x00ffffff
+ecall
+li a0, 0x100
+li a1, 0x00040001
+li a2, 0x00ffffff
+ecall
+
+li a0, 0x100
+li a1, 0x00060002
+li a2, 0x00ffffff
+ecall
+li a0, 0x100
+li a1, 0x00050002
+li a2, 0x00ffffff
+ecall
+li a0, 0x100
+li a1, 0x00040002
+li a2, 0x00ffffff
+ecall
+
+li a0, 0x100
+li a1, 0x00040003
+li a2, 0x00ffffff
+ecall
+li a0, 0x100
+li a1, 0x00050003
+li a2, 0x00ffffff
+ecall
+
+li a0, 0x100
+li a1, 0x00030004
+li a2, 0x00ffffff
+ecall
+li a0, 0x100
+li a1, 0x00040004
+li a2, 0x00ffffff
+ecall
+li a0, 0x100
+li a1, 0x00050004
+li a2, 0x00ffffff
+ecall
+li a0, 0x100
+li a1, 0x00060004
+li a2, 0x00ffffff
+ecall
+li a0, 0x100
+li a1, 0x00000004
+li a2, 0x00ffffff
+ecall
+
+li a0, 0x100
+li a1, 0x00010005
+li a2, 0x00ffffff
+ecall
+li a0, 0x100
+li a1, 0x00020005
+li a2, 0x00ffffff
+ecall
+li a0, 0x100
+li a1, 0x00030005
+li a2, 0x00ffffff
+ecall
+li a0, 0x100
+li a1, 0x00040005
+li a2, 0x00ffffff
+ecall
+li a0, 0x100
+li a1, 0x00050005
+li a2, 0x00ffffff
+ecall
+li a0, 0x100
+li a1, 0x00060005
+li a2, 0x00ffffff
+ecall
+li a0, 0x100
+li a1, 0x00070005
+li a2, 0x00ffffff
+ecall
+
+li a0, 0x100
+li a1, 0x00020006
+li a2, 0x00ffffff
+ecall
+li a0, 0x100
+li a1, 0x00030006
+li a2, 0x00ffffff
+ecall
+li a0, 0x100
+li a1, 0x00040006
+li a2, 0x00ffffff
+ecall
+li a0, 0x100
+li a1, 0x00050006
+li a2, 0x00ffffff
+ecall
+li a0, 0x100
+li a1, 0x00060006
+li a2, 0x00ffffff
+ecall
+li a0, 0x100
+li a1, 0x00070006
+li a2, 0x00ffffff
+ecall
+
+
+li a0, 0x100
+li a1, 0x00030007
+li a2, 0x00ffffff
+ecall
+li a0, 0x100
+li a1, 0x00040007
+li a2, 0x00ffffff
+ecall
+li a0, 0x100
+li a1, 0x00050007
+li a2, 0x00ffffff
+ecall
+li a0, 0x100
+li a1, 0x00060007
+li a2, 0x00ffffff
+ecall
+
+
+li a0, 0x100
+li a1, 0x00040008
+li a2, 0x00ff9901
+ecall
+li a0, 0x100
+li a1, 0x00060008
+li a2, 0x00ff9901
+ecall
+
+
+li a0, 0x100
+li a1, 0x00040009
+li a2, 0x00ff9901
+ecall
+li a0, 0x100
+li a1, 0x00060009
+li a2, 0x00ff9901
+ecall
+
+
+ecall
+addi a0, zero, 10
+ecall
+ret
